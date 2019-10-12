@@ -21,9 +21,9 @@
     <param unless="$(arg use_xacro)" name="robot_description" textfile="$(arg file)" />
 
 
-    <node pkg="tf2_ros" type="static_transform_publisher" name="left_wheel_publisher" args="-0.10 0.4 0.0 0 -1.57 0.0 base wheel_left"/>
-    <node pkg="tf2_ros" type="static_transform_publisher" name="right_wheel_publisher" args="-0.10 -0.4 0.0 0 -1.57 0.0 base wheel_right"/>
-    <node pkg="tf2_ros" type="static_transform_publisher" name="center_wheel_publisher" args="0.1 0.0 0.0 0 -1.57 0.0 base wheel_center"/>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="left_wheel_publisher" args="-0.10 0.4 0.0 0 0 -1.57 base wheel_left"/>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="right_wheel_publisher" args="-0.10 -0.4 0.0 0 0 -1.57 base wheel_right"/>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="center_wheel_publisher" args="0.1 0.0 0.0 0 0 -1.57 base wheel_center"/>
 
 
     <!-- Run RVIZ and use a specific configuration file. If RVIZ is closed, close everything. -->
