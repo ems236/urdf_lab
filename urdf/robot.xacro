@@ -128,11 +128,11 @@
         </collision>
     </link>
 
-    <joint name="base_wheel_center_joint" type="fixed">
+    <joint name="base_wheel_center_joint" type="continuous">
         <origin xyz="0.1 0.0 0.0" rpy="-1.5708 0.0 0.0" />
         <parent link="base"/>
         <child link="wheel_center"/>
-        <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
+        <limit effort="30" velocity="1.0"/>
     </joint>
 
     <xacro:macro name="xacro_name" params="suffix reflect">
@@ -153,11 +153,11 @@
             </collision>
         </link>
 
-        <joint name="base_wheel_${suffix}_joint" type="fixed">
+        <joint name="base_wheel_${suffix}_joint" type="continuous">
             <origin xyz="-0.10 ${reflect * 0.4} 0.0" rpy="-1.5708 0.0 0.0" />
             <parent link="base"/>
             <child link="wheel_${suffix}"/>
-            <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
+            <limit effort="30" velocity="1.0"/>
         </joint>
     </xacro:macro>
     <xacro:xacro_name suffix="left" reflect="1" />
