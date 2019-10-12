@@ -4,8 +4,10 @@
 
     <arg name="GUI" default="true" />
     <param name="use_gui" value="$(arg GUI)"/>
+
     <!-- Run the robot_state_publisher. -->
-    <node if="$(arg GUI)" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" />
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" />
+    <node if="$(arg GUI)" pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" />
 
     <!-- What is the name of the file to use? This can be passed into the launch file.-->
     <arg if="$(arg use_xacro)" name="filename" default="robot.xacro" />
@@ -17,6 +19,12 @@
     <!-- Use the file argument as the name of the file used lto set the /robot_description parameter on the parameter server -->
     <param if="$(arg use_xacro)" name="robot_description" command="xacro --inorder $(arg file)" />
     <param unless="$(arg use_xacro)" name="robot_description" textfile="$(arg file)" />
+
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="left_wheel_publisher" args="0.0 0.365 0.2 -1.57 0.0 0.0 base base_wheel_left_joint"/>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="right_wheel_publisher" args="0.0 0.365 0.2 -1.57 0.0 0.0 base base_wheel_right_joint"/>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="center_wheel_publisher" args="0.0 -0.365 0.2 -1.57 0.0 0.0 base base_wheel_center_joint"/>
+
 
     <!-- Run RVIZ and use a specific configuration file. If RVIZ is closed, close everything. -->
     <node pkg="rviz" type="rviz" name="rviz" args="-d $(find urdf_lab)/config/config.rviz" required="true" />
