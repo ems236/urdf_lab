@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot name="lab4">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="lab4">
     <link name="base">
         <visual>
             <origin xyz="0 0 0.99" rpy="0 0 0" />
@@ -111,28 +111,31 @@
         <child link="laser_horiz"/>
     </joint>
 
-    <link name="wheel_left">
-        <visual>
-            <geometry>
-                <cylinder radius="0.2" length="0.05" />
-            </geometry>
-            <material name="Red">
-                <color rgba="1.0 0 0 1.0"/>
-            </material>
-        </visual>
 
-        <collision>
-            <geometry>
-                <cylinder radius="0.2" length="0.05" />
-            </geometry>
-        </collision>
-    </link>
+    <xacro:macro name="xacro_name" params="suffix reflect">
+        <link name="wheel_${suffix}">
+            <visual>
+                <geometry>
+                    <cylinder radius="0.2" length="0.05" />
+                </geometry>
+                <material name="Red">
+                    <color rgba="1.0 0 0 1.0"/>
+                </material>
+            </visual>
 
-    <joint name="base_wheel_left_joint" type="fixed">
-        <origin xyz="-0.10 0.4 0.0" rpy="-1.5708 0.0 0.0" />
-        <parent link="base"/>
-        <child link="wheel_left"/>
-        <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
-    </joint>
+            <collision>
+                <geometry>
+                    <cylinder radius="0.2" length="0.05" />
+                </geometry>
+            </collision>
+        </link>
 
+        <joint name="base_wheel_${suffix}_joint" type="fixed">
+            <origin xyz="-0.10 0.4 0.0" rpy="-1.5708 0.0 0.0" />
+            <parent link="base"/>
+            <child link="wheel_${suffix}"/>
+            <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
+        </joint>
+    </xacro:macro>
+    <xacro:xacro_name suffix="left" reflect="1" />
 </robot>
