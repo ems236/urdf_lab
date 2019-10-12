@@ -1,0 +1,90 @@
+<robot name="lab4">
+    <link name="base">
+        <visual>
+            <origin xyz="0 0 0.99" rpy="0 0 0" />
+            <geometry>
+                <box size="0.94 0.78 1.98" />
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0.99" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.94 0.78 1.98" />
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="laser_vert_bottom">
+        <visual>
+            <geometry>
+                <box size="0.0062 0.0062 0.0087" />
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+
+        <collision>
+            <geometry>
+                <box size="0.0062 0.0062 0.0087" />
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="laser_vert_top_right">
+        <visual>
+            <geometry>
+                <box size="0.0062 0.0062 0.0087" />
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.0062 0.0062 0.0087" />
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="laser_vert_top_left">
+        <visual>
+            <geometry>
+                <box size="0.0062 0.0062 0.0087" />
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+
+        <collision>
+            <geometry>
+                <box size="0.0062 0.0062 0.0087" />
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="laser_vert_top_horiz">
+        <visual>
+            <geometry>
+                <cylinder radius="0.0052" length="0.0072" />
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+
+        <collision>
+            <geometry>
+                <cylinder radius="0.0052" length="0.0072" />
+            </geometry>
+        </collision>
+    </link>
+
+</robot>
