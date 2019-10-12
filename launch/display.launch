@@ -2,6 +2,9 @@
     <!-- Create an argument to determine whether to use a XACRO or URDF file. -->
     <arg name="use_xacro" default="false" />
 
+    <arg name="use_gui" default="true" />
+    <param name="use_gui" value="$(arg use_gui)"/>
+
     <!-- What is the name of the file to use? This can be passed into the launch file.-->
     <arg if="$(arg use_xacro)" name="filename" default="robot.xacro" />
     <arg unless="$(arg use_xacro)" name="filename" default="robot.urdf" />
