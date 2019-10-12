@@ -1,10 +1,10 @@
 <launch>
     <!-- Create an argument to determine whether to use a XACRO or URDF file. -->
     <arg name="use_xacro" default="false" />
-    
+
     <!-- What is the name of the file to use? This can be passed into the launch file.-->
-    <arg if="($arg use_xacro)" name="filename" default="robot.xacro" />
-    <arg unless="($arg use_xacro)" name="filename" default="robot.urdf" />
+    <arg if="$(arg use_xacro)" name="filename" default="robot.xacro" />
+    <arg unless="$(arg use_xacro)" name="filename" default="robot.urdf" />
 
     <!-- The full path of the URDF file can be passed into the launch file instead.-->
     <arg name="file" default="$(find urdf_lab)/urdf/$(arg filename)" />
