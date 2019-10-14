@@ -9,4 +9,4 @@ It does seem a little inconvenient to have to publish an initial joint state for
 
 The Jennings computers do not appear to have the velodyne description installed, so I could not use that xacro file.  I downloaded the file from https://bitbucket.org/DataspeedInc/velodyne_simulator/raw/506664dd478984aa6645d8210802a4a7ddc40629/velodyne_description/urdf/VLP-16.urdf.xacro and included that in my package.
 
-## A video of my launch file working is included at this url.  
+## A video of my launch file working is included at this url https://drive.google.com/file/d/1B2iqR5TNNQHUP7ElEnzrUylYa5Jri50i/view?usp=sharing.  
