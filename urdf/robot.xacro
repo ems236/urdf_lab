@@ -5,6 +5,14 @@
     <xacro:include filename="$(find gazebo_plugins)/test/multi_robot_scenario/xacro/laser/hokuyo.xacro"/>
     <!--<xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>-->
 
+    <!--
+        This package was not installed on the jennings machines so I downloaded the xacro.
+        Should be this
+        <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>    
+    -->
+
+    <xacro:include filename="$(find urdf_lab)/urdf/VLP-16.urdf.xacro"/>
+
     <link name="base">
         <visual>
             <origin xyz="0 0 0.99" rpy="0 0 0" />
@@ -127,7 +135,9 @@
     </link>
     -->
 
-    <xacro:laser name="laser_horiz" parent="base" xyz="0.2325 0.0001 1.9201" rpy="-0.0012068 0.114646 -0.0015308" meshes="package://gazebo_plugins/test/multi_robot_scenario/meshes/laser" />
+    <VLP-16 parent="base" name="laser_horiz" topic="laser_horiz/packets" hz="10" samples="440" gpu="false">
+        <origin xyz="0.2325416305773505 -0.0001380069427607134 1.920122926231907" rpy="-0.0012068 0.114646 -0.0015308" />
+    </VLP-16>
 
     <!--
     <joint name="base_laser_horiz_joint" type="fixed">
