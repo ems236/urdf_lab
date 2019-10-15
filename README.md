@@ -4,6 +4,10 @@
 
 ## Comments on the lab
 This lab was pretty straight forward so I don't have many details to write up.  
+
+My files are named exactly as the delivable tree example describes. 
+roslaunch urdf_lab display.launch use_xacro:=true GUI:=true will launch the display.
+
 I define the xacro file as described and have a launch file that will generate the urdf file from the xacro and display it in RVIS.
 It does seem a little inconvenient to have to publish an initial joint state for continuous joints. You would think that that initial value could be published from reading the urdf along with the values for all the static joints. 
 
