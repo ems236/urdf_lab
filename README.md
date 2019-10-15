@@ -11,6 +11,6 @@ roslaunch urdf_lab display.launch use_xacro:=true GUI:=true will launch the disp
 I define the xacro file as described and have a launch file that will generate the urdf file from the xacro and display it in RVIS.
 It does seem a little inconvenient to have to publish an initial joint state for continuous joints. You would think that that initial value could be published from reading the urdf along with the values for all the static joints. 
 
-The Jennings computers do not appear to have the velodyne description installed, so I could not use that xacro file.  I downloaded the file from https://bitbucket.org/DataspeedInc/velodyne_simulator/raw/506664dd478984aa6645d8210802a4a7ddc40629/velodyne_description/urdf/VLP-16.urdf.xacro and included that in my package.
+I downloaded the xacro file for the velodyne becuase it wasn't on the jennings computers, but I have updated the xacro file to use the package now.  I just never deleted the script that I downloaded.
 
 ## A video of my launch file working is included at this url https://drive.google.com/file/d/1B2iqR5TNNQHUP7ElEnzrUylYa5Jri50i/view?usp=sharing.  

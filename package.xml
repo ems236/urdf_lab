@@ -48,6 +48,13 @@
   <!--   <test_depend>gtest</test_depend> -->
   <!-- Use doc_depend for packages you need only for building documentation: -->
   <!--   <doc_depend>doxygen</doc_depend> -->
+  <build_depend>xacro</build_depend>
+  <build_depend>gazebo_plugins</build_depend>
+  <build_depend>velodyne_description</build_depend>
+  <!--I don't know if xacro counts as doc but it feels like it does-->
+  <doc_depend>xacro</doc_depend>
+  <doc_depend>gazebo_plugins</doc_depend>
+  <doc_depend>velodyne_description</doc_depend>
   <buildtool_depend>catkin</buildtool_depend>
 
 

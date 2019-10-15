@@ -7,7 +7,11 @@ project(urdf_lab)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED)
+find_package(catkin REQUIRED COMPONENTS
+  xacro
+  velodyne_description
+  gazebo_plugins
+)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -101,7 +105,7 @@ find_package(catkin REQUIRED)
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES urdf_lab
-#  CATKIN_DEPENDS other_catkin_pkg
+#  CATKIN_DEPENDS 
 #  DEPENDS system_lib
 )
 
