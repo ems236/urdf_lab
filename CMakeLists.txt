@@ -105,7 +105,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES urdf_lab
-  CATKIN_DEPENDS xacro velodyne_description gazebo_plugins
+#  CATKIN_DEPENDS 
 #  DEPENDS system_lib
 )
 
