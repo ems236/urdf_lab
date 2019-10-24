@@ -5,8 +5,9 @@
     <arg name="GUI" default="true" />
     <param name="use_gui" value="$(arg GUI)"/>
 
-    <!-- Run the robot_state_publisher. -->
-    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" />
+    <arg name="use_robot_state_publisher" default="true"/>
+
+    <node if="$(arg use_robot_state_publisher)" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" />
     <node if="$(arg GUI)" pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" />
 
     <!-- What is the name of the file to use? This can be passed into the launch file.-->
