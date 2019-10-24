@@ -12,7 +12,8 @@
     <node if="$(arg GUI)" pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" />
 
     <!-- What is the name of the file to use? This can be passed into the launch file.-->
-    <arg if="$(eval arg('use_xacro') and arg('use_lab_5'))" name="filename" default="robot.xacro" />
+    <arg if="$(eval arg('use_xacro') and arg('use_lab_5'))" name="filename" default="imu.xacro" />
+    <arg if="$(eval arg('use_xacro') and not arg('use_lab_5'))" name="filename" default="robot.xacro" />
     <arg unless="$(arg use_xacro)" name="filename" default="robot.urdf" />
 
     <!-- The full path of the URDF file can be passed into the launch file instead.-->
