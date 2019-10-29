@@ -2,6 +2,7 @@
     <!-- Create an argument to determine whether to use a XACRO or URDF file. -->
     <arg name="use_xacro" default="true" />
     <arg name="use_lab_5" default="true"/>
+    <arg name="load_map" default="true"/>
 
     <arg name="config_file_name" default="config.rviz"/>
 
@@ -37,8 +38,8 @@
     <node pkg="tf2_ros" type="static_transform_publisher" name="center_wheel_publisher" args="0.1 0.0 0.0 0 0 -1.57 base wheel_center"/>
 
     <!--Run the map server-->
-    <node pkg="map_server" type="map_server" name="map_server" args="$(find maps_glennan)/maps/glennan5_map.yaml"/>
+    <node if="$(arg load_map)" pkg="map_server" type="map_server" name="map_server" args="$(find maps_glennan)/maps/glennan5_map.yaml"/>
 
     <!-- Run RVIZ and use a specific configuration file. If RVIZ is closed, close everything. -->
-    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find urdf_lab)/config/$(arg config_file_name)" required="true" />
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find urdf_lab)/config/$(arg config_file_name) -f $(eval 'map' if arg('load_map') else 'base')" required="true" />
 </launch>
