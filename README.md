@@ -3,7 +3,7 @@
 This repository and package are poorly named because we reused the lab 4 package.
 All updated code is on branch master.
 
-## Comments on the lab
+## Lab info
 To launch lab 4 display: 
 ```roslaunch urdf_lab display.launch load_map:=false config_file_name:=config_lab4.rviz use_lab_5:=false use_sim_time:=false use_rqt_bag:=false```
 
@@ -16,3 +16,5 @@ To launch the display with the robot moving around the map:
 ```roslaunch urdf_lab display.launch```
 
 
+## Demo Video
+https://drive.google.com/file/d/126GBYTuqMwTELgzOnakyHsI5k7Nj4b1h/view?ts=5db89542
