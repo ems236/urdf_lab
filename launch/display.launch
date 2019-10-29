@@ -5,12 +5,12 @@
 
     <arg name="config_file_name" default="config.rviz"/>
 
-    <arg name="use_rqt_bag" default="true"/>
-    <node if="$(arg use_rqt_bag)" pkg="rqt_bag" type="rqt_bag" name="rqt_bag" args="/tf_trajectory:=/tf $(find urdf_lab)/bag/glennan_5_basic.bag"/>
-
     <arg name="use_sim_time" default="true"/>
     <param name="use_sim_time" value="$(arg use_sim_time)"/>
 
+    <arg name="use_rqt_bag" default="true"/>
+    <node if="$(arg use_rqt_bag)" pkg="rqt_bag" type="rqt_bag" name="rqt_bag" args="/tf_trajectory:=/tf $(find urdf_lab)/bag/glennan_5_basic.bag"/>
+    
     <arg name="GUI" default="true" />
     <param name="use_gui" value="$(arg GUI)"/>
 
