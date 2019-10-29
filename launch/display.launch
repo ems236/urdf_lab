@@ -3,7 +3,9 @@
     <arg name="use_xacro" default="true" />
     <arg name="use_lab_5" default="true"/>
 
-    <arg name="use_rqt_bag" default="false"/>
+    <arg name="config_file_name" default="config.rviz"/>
+
+    <arg name="use_rqt_bag" default="true"/>
     <node if="$(arg use_rqt_bag)" pkg="rqt_bag" type="rqt_bag" name="rqt_bag" args="/tf_trajectory:=/tf $(find urdf_lab)/bag/glennan_5_basic.bag"/>
 
     <arg name="use_sim_time" default="true"/>
@@ -34,7 +36,9 @@
     <node pkg="tf2_ros" type="static_transform_publisher" name="right_wheel_publisher" args="-0.10 -0.4 0.0 0 0 -1.57 base wheel_right"/>
     <node pkg="tf2_ros" type="static_transform_publisher" name="center_wheel_publisher" args="0.1 0.0 0.0 0 0 -1.57 base wheel_center"/>
 
+    <!--Run the map server-->
+    <node pkg="map_server" type="map_server" name="map_server" args="$(find maps_glennan)/maps/glennan5_map.yaml"/>
 
     <!-- Run RVIZ and use a specific configuration file. If RVIZ is closed, close everything. -->
-    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find urdf_lab)/config/config.rviz" required="true" />
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find urdf_lab)/config/$(config_file_name)" required="true" />
 </launch>
