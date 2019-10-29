@@ -1,6 +1,6 @@
 <launch>
     <!-- Create an argument to determine whether to use a XACRO or URDF file. -->
-    <arg name="use_xacro" default="false" />
+    <arg name="use_xacro" default="true" />
     <arg name="use_lab_5" default="true"/>
 
     <arg name="use_rqt_bag" default="false"/>
