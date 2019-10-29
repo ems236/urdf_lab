@@ -51,7 +51,7 @@
   <build_depend>xacro</build_depend>
   <build_depend>gazebo_plugins</build_depend>
   <build_depend>velodyne_description</build_depend>
-  <build_depend>glennan_maps</build_depend>
+  <build_depend>maps_glennan</build_depend>
   <build_depend>map_server</build_depend>
   <!--I don't know if xacro counts as doc but it feels like it does-->
   <doc_depend>xacro</doc_depend>

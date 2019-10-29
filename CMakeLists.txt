@@ -11,7 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   xacro
   velodyne_description
   gazebo_plugins
-  glennan_maps
+  maps_glennan
   map_server
 )
 
