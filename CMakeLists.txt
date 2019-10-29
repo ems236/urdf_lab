@@ -11,6 +11,8 @@ find_package(catkin REQUIRED COMPONENTS
   xacro
   velodyne_description
   gazebo_plugins
+  glennan_maps
+  map_server
 )
 
 ## System dependencies are found with CMake's conventions
