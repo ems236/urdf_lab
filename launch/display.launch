@@ -40,5 +40,5 @@
     <node pkg="map_server" type="map_server" name="map_server" args="$(find maps_glennan)/maps/glennan5_map.yaml"/>
 
     <!-- Run RVIZ and use a specific configuration file. If RVIZ is closed, close everything. -->
-    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find urdf_lab)/config/$(config_file_name)" required="true" />
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find urdf_lab)/config/$(arg config_file_name)" required="true" />
 </launch>
