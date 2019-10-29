@@ -1,6 +1,6 @@
 ### Ellis Saupe ems236 lab 5
 
-## My gihub repo is here https://github.com/ems236/urdf_lab
+This repository and package are poorly named because we reused the lab 4 package.
 
 ## Comments on the lab
 To launch lab 4 display: 
